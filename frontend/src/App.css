@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 200px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+  margin-top: 25px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.loading-indicator {
+  margin-top: 20px;
+}
+
+.create-rota-button {
+  margin-top: 15px;
+}
+
+.delete-rota-button {
+  margin-top: 15px;
+}
+
+.delete-rota-confirmation {
+  padding: 15px;
+}
+
+.confirm-deleting-rota-button {
+  margin-right: 5px;
+}
+
+.support-block {
+  padding: 15px;
+}
+
+.today-support-engineer {
+  color: green;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.warning-text {
+  color: red;
+  font-weight: 500;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

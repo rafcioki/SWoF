@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { Button } from 'react-bootstrap'
 
 export default class CreateNewRota extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -49,7 +49,10 @@ export default class CreateNewRota extends Component {
         <p>Looks like no rota is created at the moment. Please provide an end date and create a new rota:</p>
         <DatePicker dateFormat="DD/MM/YYYY" selected={this.state.startDate} onChange={this.handleChange} />
         <Button className="create-rota-button" onClick={this.handleOnCreate}>Create</Button>
-        { this.state.error && <div className="warning-text">{this.state.error}</div> }
+        { 
+          this.state.error &&
+          <div className="warning-text">{this.state.error}</div> 
+        }
       </div>
     );
   }

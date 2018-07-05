@@ -13,7 +13,7 @@ const Rota = (rota) => {
   return (
     <div>
         <div className="support-block">
-          <p>Supporting today:</p>
+          { todayEntries && <p>Supporting today:</p> }
           { 
             todayEntries &&
             todayEntries.map(entry => 

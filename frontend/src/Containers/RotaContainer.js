@@ -7,8 +7,8 @@ import Rota from '../Components/Rota'
 import Spinner from 'react-spinkit'
 
 export default class RotaContainer extends Component {
-  constructor (props) {
-    super (props)
+  constructor(props) {
+    super(props)
 
     this.state = { 
       rotaDoesntExist: false,

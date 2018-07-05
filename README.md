@@ -8,15 +8,17 @@ Built using [React](https://reactjs.org/) on top of [create-react-app](https://g
 ### Setting up locally
 Node >= 6 and npm 6+ (or yarn 0.25+) are required to install.
 
-To run it locally install packages (*npm install* or *yarn install*), then the app can be started by running *npm start* or *yarn start*
+To run it locally install packages (*npm install* or *yarn install*), then the app can be started by running *npm start* or *yarn start*.
 
-Make sure to set the right API path under *src/Config.json*
+Make sure to set the right API path under *src/Config.json*.
 
 ## Backend
 Built using .NET Core 2.1, WebApi and Entity Framework Core.
 
 ### Setting up locally
 Set the right connection string in appsettings.json. WebApi project should create and migrate database on first start.
+
+Running API on IIS Express might require running Visual Studio as administrator.
 
 ## Hosting
 Application is hosted on Azure.

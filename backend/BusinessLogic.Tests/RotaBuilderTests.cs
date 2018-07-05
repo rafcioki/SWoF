@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BusinessLogic.DomainObjects;
 using BusinessLogic.Repositories;
 using BusinessLogic.Services;
+using Core.Extensions;
 using Core.Services;
 using DataAccess.FakeData;
 using FluentAssertions;
@@ -68,7 +69,7 @@ namespace BusinessLogic.Tests
 
             // then
             rota.Any(entry =>
-                    entry.DateTime.DayOfWeek == DayOfWeek.Saturday || entry.DateTime.DayOfWeek == DayOfWeek.Sunday)
+                    entry.DateTime.IsWeekend())
                 .Should().BeFalse();
         }
 

@@ -40,15 +40,15 @@ namespace BusinessLogic.Services
             var rota = new List<RotaEntry>();
             var startDate = _dateTimeProvider.Now;
 
-            foreach (var date in startDate.EachDay(endDate))
+            foreach (var day in startDate.EachDay(endDate))
             {
-                if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                if (day.IsWeekend())
                 {
                     continue;
                 }
 
                 var lastPeriodRota = rota.Where(entry =>
-                    entry.DateTime > date.AddDays(-SupportPeriodInDays))
+                    entry.DateTime > day.AddDays(-SupportPeriodInDays))
                     .ToList();
 
                 var availableEngineers =
@@ -66,19 +66,12 @@ namespace BusinessLogic.Services
                     availableEngineers.Count - 1,
                     SupportingEngineersPerDay);
 
-                rota.Add(new RotaEntry
+                rota.AddRange(randomIndexes.Select(index => new RotaEntry
                 {
-                    DateTime = date,
-                    Engineer = availableEngineers[randomIndexes[0]],
+                    DateTime = day,
+                    Engineer = availableEngineers[index],
                     HoursInShift = HoursInDailySupport
-                });
-
-                rota.Add(new RotaEntry
-                {
-                    DateTime = date,
-                    Engineer = availableEngineers[randomIndexes[1]],
-                    HoursInShift = HoursInDailySupport
-                });
+                }));
             }
 
             return rota;
